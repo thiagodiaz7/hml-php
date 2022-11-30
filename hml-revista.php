@@ -21,7 +21,7 @@ if ($id == "assinatura-artigo") {
 	include("pg-revista-assinatura-artigo.php");
 }
 if ($id == "edicoes-anteriores") {
-	include("pg-revista-edicoes.php");
+	include("hml-revista-edicoes.php");
 }
 if ($id == "onde-encontrar") {
 	include("pg-revista-ondeencontrar.php");

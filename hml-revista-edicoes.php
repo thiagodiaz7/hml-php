@@ -17,7 +17,7 @@ else {
 	$titulo = "$pg | $nmsite";
 	$bread = "<a href='".$url_total."' itemprop='url'><span>Home</span></a> ›|<span><strong>$pg</strong></span>";
 }
-include("_topo.php");
+include("_hml-topo.php");
 ?>
 
 	<? if ($id2) {
@@ -240,5 +240,5 @@ include("_topo.php");
 		
 		
 <?
-include("_rodape.php");
+include("_hml-rodape.php");
 ?>

@@ -211,7 +211,7 @@ include("_hml-topo.php");
 							<div class="mld-artice-cta--assine-span">Exclusivo e Inteligente</div>
 							<h3 class="mld-article-cta--assine-title">Mantenha-se atualizado em Logística e Supply Chain</h3>
 
-							<a href="/manter-se-atualizado" class="btn btn btn-dark mld-article-cta--assine-btn">Saiba mais</a>
+							<a href="/hml-assine" class="btn btn btn-dark mld-article-cta--assine-btn">Saiba mais</a>
 						</div>
 						
 						<div class="col-md-4">

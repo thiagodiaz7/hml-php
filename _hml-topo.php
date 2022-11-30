@@ -38,6 +38,7 @@
     <meta name="MobileOptimized" content="320">
 	
 	<base href="<?= $url_total ?>" />
+	<link href="<?= $url_total ?>assets/css/style-n.css?t=<?=time()?>" rel="stylesheet" type="text/css" />
 	<!--<link href="</assets/css/style.css" rel="stylesheet" type="text/css" />-->
 
 
@@ -150,8 +151,8 @@
 				aria-controls="offcanvasNavbar">
 				<span class="navbar-toggler-icon mdl-navbar-toggler-icon"></span>
 			</button>
-			<a href="<?= $url_total ?>">
-				<img class="logo" src="assets/images/revistamundologistica.png" alt="">
+			<a href="<?= $url_total ?>/hml">
+				<img class="logo" src="assets/images/revistamundologistica-n.png" alt="">
 			</a>    
 				<ul class="nav nav-pills">
 
@@ -174,7 +175,7 @@
 				?>
 
 
-					<li class="nav-item mdl-nav-item mdl-nav-assine mdl-header--nav-link-rounded"><a href="<?= $url_total ?>/manter-se-atualizado" target="_blank" class="nav-link">Assine</a></li>
+					<li class="nav-item mdl-nav-item mdl-nav-assine mdl-header--nav-link-rounded"><a href="<?= $url_total ?>hml-assine" target="_blank" class="nav-link">Assine</a></li>
 				</ul>
 
 				
@@ -255,7 +256,7 @@
 				<li class="nav-item mld-nav-menu-item col"><a href="<?= $url_total ?>hml-entrevistas" class="nav-link mld-nav-menu-link">Entrevistas</a></li>
 				<li class="nav-item mld-nav-menu-item col"><a href="<?= $url_total ?>hml-artigos" class="nav-link mld-nav-menu-link">Artigos</a></li>
 				<li class="nav-item mld-nav-menu-item col"><a href="<?= $url_total ?>hml-webinar" class="nav-link mld-nav-menu-link">Webinars</a></li>
-				<li class="nav-item mld-nav-menu-item col"><a href="<?= $url_total ?>hml-colunas" class="nav-link mld-nav-menu-link">Colunas</a></li>
+				<li class="nav-item mld-nav-menu-item col"><a href="<?= $url_total ?>hml-revista/edicoes-anteriores" class="nav-link mld-nav-menu-link">A Revista</a></li>
 				<li class="nav-item mld-nav-menu-item col"><a href="<?= $url_total ?>hml-podcast" class="nav-link mld-nav-menu-link">Podcast</a></li>
 			</ul>
 	</div>

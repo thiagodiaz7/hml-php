@@ -1,5 +1,6 @@
-﻿<?
-$pg = "ASSINE AQUI!";
+﻿
+<?
+$pg = "Assine Aqui!";
 if ($id2) {
 	
 }
@@ -32,23 +33,25 @@ include("_topo.php");
 								<div class="bkBranco">							
 								<div class="ne_map_content_wrapper ne_map_content_wrapper2 conteudoAssinatura">
 								
-								<p><strong>Preencha os dados abaixo e finalize a compra da sua assinatura</strong></p>
-								<p>&nbsp;</p>
-								<form class="form-horizontal form2" onSubmit="return checa_formulario();" name="dadosMJ" id="form" action="https://revistamundologistica.com.br/Assinatura.jsp" method="POST" accept-charset="ISO-8859-1">
+								<h2><strong>Preencha os dados abaixo, faça sua assinatura e esteja sempre atualizado em logística!</strong></h2>
+								<p><strong>Valor da assinatura anual:</strong> R$468,00 a vista no boleto ou parcelado em até 12x de R$39,00 no cartão de crédito<BR>&nbsp;</p>
+								<p class='txtCenter h2rounded'><strong>APROVEITE O BENEFÍCIO:</strong><BR> Assinando agora, além da revista atual, GANHE 2 EDIÇÕES anteriores -<BR> "<a href="https://mundologistica.com.br/revista/edicoes-anteriores/tecnologia-e-transporte-inseparaveis" target="_blank">Tecnologia e transporte - inseparáveis</a>" e<BR> "<a href="https://mundologistica.com.br/revista/edicoes-anteriores/e-commerce-e-logistica-uma-relacao-elementar" target="_blank">Tudo sobre logística para e-commerce</a>"</p>
+								<p><BR><BR>*campos obrigatórios&nbsp;</p>
+								<form class="form-horizontal form2" onSubmit="return checa_formulario();" name="assinaturaMLOG" id="form" action="https://revistamundologistica.com.br/Assinatura-Vindi.jsp" method="POST" accept-charset="ISO-8859-1">
 								<div class="row">
 									<div class="col-md-8">
 										<h2>Seus dados</h2>
 										
 										<div class="ne_map_form_input1 ne_map_form_input2">
-											<input type="text" name="nome" placeholder="Nome" required />
+											<input type="text" name="nome" placeholder="Nome*" required />
 										</div>
 										<div class="ne_map_form_input1 ne_map_form_input2">
 											<input type="text" name="ac" placeholder="Aos cuidados" />
 										</div>
 										<div class="ne_map_form_input1 ne_map_form_input2">
-											<input type="text" name="email" placeholder="E-mail" required />
+											<input type="text" name="email" placeholder="E-mail*" required />
 										</div>
-										<div class="ne_map_form_input1 ne_map_form_input2">
+										<!-- <div class="ne_map_form_input1 ne_map_form_input2">
 											<div style="padding-top:15px">
 											<div class="row">
 												<div class="col-md-3"><strong>Sexo*:</strong></div>
@@ -62,7 +65,7 @@ include("_topo.php");
 												</div>
 											</div>
 											</div>
-										</div>
+										</div> -->
 										<div class="ne_map_form_input1 ne_map_form_input2">
 											<input type="text" name="telefoneRes" placeholder="Telefone/Celular*" required />
 										</div>
@@ -70,13 +73,22 @@ include("_topo.php");
 											<input type="text" name="telefoneCom" placeholder="Celular" />
 										</div>
 										<div class="ne_map_form_input1 ne_map_form_input2">
-											<input type="text" name="endereco" placeholder="Endereço*" required />
+											<input type="text" name="cep" id="cep" placeholder="CEP* (somente números)" maxlength="8" onblur="pesquisacep(this.value);" required />
+										</div>										
+										<div class="ne_map_form_input1 ne_map_form_input2">
+											<input type="text" id="endereco" name="endereco" placeholder="Endereço*" required />
 										</div>
 										<div class="ne_map_form_input1 ne_map_form_input2">
-											<input type="text" name="cidade" placeholder="Cidade*" required />
+											<input type="text" name="numero" placeholder="Numero*" required />
 										</div>
 										<div class="ne_map_form_input1 ne_map_form_input2">
-											<select name="estado" placeholder="" required> 
+											<input type="text" name="complemento" placeholder="Complemento" required />
+										</div>
+										<div class="ne_map_form_input1 ne_map_form_input2">
+											<input type="text" id="cidade" name="cidade" placeholder="Cidade*" required />
+										</div>
+										<div class="ne_map_form_input1 ne_map_form_input2">
+											<select name="estado" id="estado" placeholder="" required> 
 											<option value="0">Estado*</option> 
 											<option value="AC">Acre</option> 
 											<option value="AL">Alagoas</option> 
@@ -106,9 +118,6 @@ include("_topo.php");
 											<option value="SE">Sergipe</option> 
 											<option value="TO">Tocantins</option> 
 											</select>					
-										</div>
-										<div class="ne_map_form_input1 ne_map_form_input2">
-											<input type="text" name="cep" placeholder="CEP* (somente números)" maxlength="8" onkeypress='return SomenteNumero(event)' required />
 										</div>
 										<div class="ne_map_form_input1 ne_map_form_input2">
 											<input type="text" name="cpf" placeholder="CPF/CNPJ* (somente números)" maxlength="14" onkeypress='return SomenteNumero(event)' required />
@@ -149,10 +158,11 @@ include("_topo.php");
 									</div>
 									<div class="col-md-4">
 										<div class="row">
-											<div class="col-md-1"><input type="radio" name="tipoAssinatura" value="1I" checked /></div>
+											<div class="col-md-1"><input type="radio" name="tipoAssinatura" value="PR" checked /></div>
 											<div class="col-md-11">
-											<!-- <p class="mini"><strong>PREMIUM - Ambiente de conhecimento em Logística</strong> - 1 ano - R$468,00 - (parcele em até 12x de R$39,00 no cartão ou a vista no boleto)</p> -->
-											<p class="mini" style="text-align:left!important"><strong>Assinatura Convencional</strong> - 1 ano - apenas R$159,00 (parcele em at&eacute; 3x de R$53,00 no cart&atilde;o ou à vista no boleto)</p>
+											<p class="mini"><strong>ASSINATURA MUNDOLOGÍSTICA</strong> - 1 ano - R$468 - (em até 12x de R$39,00 no cartão ou a vista no boleto)</p>
+											<!-- <p class="mini" style="text-align:left!important"><strong>PREMIUM - Plataforma de conhecimento</strong><BR> - 1 ano - PROMOÇÃO - de R$468,00 por R$397,80 - parcele em até 12x de R$33,15 no cartão ou à vista no boleto</p> -->
+											<!-- parcele em até 12x de R$39,00 no cartão ou R$468,00 à vista no boleto)</p> -->
 											</div>
 										</div>
 									
@@ -180,23 +190,29 @@ include("_topo.php");
 										</div>
 
 										<p>&nbsp;</p>
+		<input type="hidden" name="sexo" value="M" />
 		<input type="hidden" name="fax" value="" />
 		<input type="hidden" name="dataNascimento" value="" />
-		<input type="hidden" name="edInicial" value="79" />
+		<input type="hidden" name="edInicial" value="91" />
 										
-										
-										<p class="text-center">Clique em "Não sou um robô"</p>
+									</div>
+								</div>
+								
+								<div class="row">
+									<div class="col-md-12">
 										<div class="text-center" style="margin:20px 0">
 										<div class="g-recaptcha" data-sitekey="6LfF5iMTAAAAAPnSc_a_vqY8CFJL8lcunazg64HS" style="display:inline-block"></div>
 										</div>
-										<div class="text-center"><button id="submit" class="button">Fazer minha assinatura</button></div>
+										<div class="text-center"><button id="submit" class="button">Comprar</button></div>
 									</div>
 								</div>
+								
 								</form>
 								<div class="clearfix"></div>
-								<p>&nbsp;</p>
-								<h2>Informações sobre a assinatura:</h2>
-								<p>• A revista MundoLogística é uma publicação Bimestral.</p>
+
+								<!-- <p><img src='/images/camiseta-tabela.jpg' /></p> -->
+<BR><BR>							
+								
 								<p>• O pagamento pode ser feito por boleto bancário ou cartão de crédito. O boleto é gerado automaticamente após o preenchimento do formulário acima e poderá ser pago em qualquer agência bancária ou via Internet Banking. O pagamento por cartão de crédito é feito de forma online.</p>
 								<p>• Após o pagamento, em até 1 dia útil você receberá um e-mail de confirmação da assinatura e seu código de assinante para acesso a área de assinantes. Você receberá seu primeiro exemplar impresso dentro de 5 a 10 dias úteis.</p>
 								<p>• Dúvidas podem ser enviadas para <a href="mailto:assinaturas@mundologistica.com.br">assinaturas@mundologistica.com.br</a></p>
@@ -219,6 +235,72 @@ include("_topo.php");
 <script type="text/javascript" src="https://d335luupugsy2.cloudfront.net/js/integration/stable/rd-js-integration.min.js"></script>  
 <script src="js/valida_cpf_cnpj.js"></script>
 
+    <!-- Adicionando Javascript -->
+    <script>
+    
+    function limpa_formulário_cep() {
+            //Limpa valores do formulário de cep.
+            document.getElementById('endereco').value=("");
+            document.getElementById('cidade').value=("");
+            document.getElementById('estado').value=("");
+    }
+
+    function meu_callback(conteudo) {
+        if (!("erro" in conteudo)) {
+            //Atualiza os campos com os valores.
+            document.getElementById('endereco').value=(conteudo.logradouro);
+            document.getElementById('cidade').value=(conteudo.localidade);
+            document.getElementById('estado').value=(conteudo.uf);
+        } //end if.
+        else {
+            //CEP não Encontrado.
+            limpa_formulário_cep();
+            alert("CEP não encontrado.");
+        }
+    }
+        
+    function pesquisacep(valor) {
+        //Nova variável "cep" somente com dígitos.
+        var cep = valor.replace(/\D/g, '');
+
+        //Verifica se campo cep possui valor informado.
+        if (cep != "") {
+
+            //Expressão regular para validar o CEP.
+            var validacep = /^[0-9]{8}$/;
+
+            //Valida o formato do CEP.
+            if(validacep.test(cep)) {
+
+                //Preenche os campos com "..." enquanto consulta webservice.
+                document.getElementById('endereco').value="...";
+                document.getElementById('cidade').value="...";
+                document.getElementById('estado').value="...";
+
+                //Cria um elemento javascript.
+                var script = document.createElement('script');
+
+                //Sincroniza com o callback.
+                script.src = 'https://viacep.com.br/ws/'+ cep + '/json/?callback=meu_callback';
+
+                //Insere script no documento e carrega o conteúdo.
+                document.body.appendChild(script);
+
+            } //end if.
+            else {
+                //cep é inválido.
+                limpa_formulário_cep();
+                alert("Formato de CEP inválido.");
+            }
+        } //end if.
+        else {
+            //cep sem valor, limpa formulário.
+            limpa_formulário_cep();
+        }
+    };
+
+    </script>
+
 
 <script language="javascript"> 
 
@@ -235,77 +317,79 @@ include("_topo.php");
 	function checa_formulario(){
 		
 		//validar nome
-		if (document.dadosMJ.nome.value == ""){
+		if (document.assinaturaMLOG.nome.value == ""){
 			alert("O campo nome deve ser preenchido!");
-			document.dadosMJ.nome.focus();
+			document.assinaturaMLOG.nome.focus();
 			return false;
 		}
 		//validar email
-		if (document.dadosMJ.email.value == ""){
+		if (document.assinaturaMLOG.email.value == ""){
 			alert("O campo email deve ser preenchido!");
-			document.dadosMJ.email.focus();
+			document.assinaturaMLOG.email.focus();
 			return false;
 		}
 		//validar cpf
-		if (!valida_cpf_cnpj(document.dadosMJ.cpf.value))
+		if (!valida_cpf_cnpj(document.assinaturaMLOG.cpf.value))
 		{
-		//if (document.dadosMJ.cpf.value == ""){
+		//if (document.assinaturaMLOG.cpf.value == ""){
 			alert("O campo cpf/cnpj é inválido!");
-			document.dadosMJ.cpf.focus();
+			document.assinaturaMLOG.cpf.focus();
 			return false;
 		}
 		//validar telefone
-		if (document.dadosMJ.telefoneRes.value == ""){
+		if (document.assinaturaMLOG.telefoneRes.value == ""){
 			alert("O campo telefone deve ser preenchido!");
-			document.dadosMJ.telefoneRes.focus();
+			document.assinaturaMLOG.telefoneRes.focus();
 			return false;
 		}
 		//validar endereco
-		if (document.dadosMJ.endereco.value == ""){
+		if (document.assinaturaMLOG.endereco.value == ""){
 			alert("O campo endereço deve ser preenchido!");
-			document.dadosMJ.endereco.focus();
+			document.assinaturaMLOG.endereco.focus();
 			return false;
 		}
 		//validar cidade
-		if (document.dadosMJ.cidade.value == ""){
+		if (document.assinaturaMLOG.cidade.value == ""){
 			alert("O campo cidade deve ser preenchido!");
-			document.dadosMJ.cidade.focus();
+			document.assinaturaMLOG.cidade.focus();
 			return false;
 		}
 		//validar cep
-		if (document.dadosMJ.cep.value == ""){
+		if (document.assinaturaMLOG.cep.value == ""){
 			alert("O campo CEP deve ser preenchido!");
-			document.dadosMJ.cep.focus();
+			document.assinaturaMLOG.cep.focus();
 			return false;
 		}
-		if (isNaN(document.dadosMJ.cep.value)){
+		if (isNaN(document.assinaturaMLOG.cep.value)){
 			alert("O campo CEP deve conter somente números!");
-			document.dadosMJ.cep.focus();
+			document.assinaturaMLOG.cep.focus();
 			return false;
 		}				
 		//validar estado
-		if (document.dadosMJ.estado.value == "0"){
+		if (document.assinaturaMLOG.estado.value == "0"){
 			alert("O campo Estado deve ser preenchido!");
-			document.dadosMJ.cep.focus();
+			document.assinaturaMLOG.cep.focus();
 			return false;
 		}
-		if (document.dadosMJ.cargo.value == "selecione"){
+		if (document.assinaturaMLOG.cargo.value == "selecione"){
 			alert("O campo Cargo deve ser preenchido!");
-			document.dadosMJ.cargo.focus();
+			document.assinaturaMLOG.cargo.focus();
 			return false;
 		}
+
+
 		
-		if (document.dadosMJ.cupom.value.match(/PR/) && document.dadosMJ.tipoAssinatura.value != "PR"){
+		if (document.assinaturaMLOG.cupom.value.match(/PR/) && document.assinaturaMLOG.tipoAssinatura.value != "PR"){
 			alert("Este cupom de desconto só é válido para assinaturas Premium!");
-			document.dadosMJ.cupom.focus();
+			document.assinaturaMLOG.cupom.focus();
 			return false;
 		}
 		
 		
-/*		if (document.dadosMJ.g-recaptcha.getResponse() == "")
+/*		if (document.assinaturaMLOG.g-recaptcha.getResponse() == "")
 		{
 			alert("Você não clicou em \"Não sou um robô\", por favor, clique!");
-			document.dadosMJ.g-recaptcha.focus();
+			document.assinaturaMLOG.g-recaptcha.focus();
 			return false;
 		}		
 */
@@ -339,14 +423,14 @@ var inputCargo = form.find('select[name="cargo"]');
 
         RdIntegration.post(data_array);
 		
-		return document.dadosMJ.submit();
+		return document.assinaturaMLOG.submit();
 }
 	
 
 	
 	</script>
 
-
+<script type='text/javascript' data-cfasync='false'>window.purechatApi = { l: [], t: [], on: function () { this.l.push(arguments); } }; (function () { var done = false; var script = document.createElement('script'); script.async = true; script.type = 'text/javascript'; script.src = 'https://app.purechat.com/VisitorWidget/WidgetScript'; document.getElementsByTagName('HEAD').item(0).appendChild(script); script.onreadystatechange = script.onload = function (e) { if (!done && (!this.readyState || this.readyState == 'loaded' || this.readyState == 'complete')) { var w = new PCWidget({c: '3c23fb9f-5837-463b-9b7c-03c5ca2286ab', f: true }); done = true; } }; })();</script>
 
 <?
 include("_rodape.php");

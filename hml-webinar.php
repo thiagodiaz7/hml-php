@@ -124,9 +124,9 @@ include("_hml-topo.php");
                         </p>
 
                         <div class="d-grid gap-2 justify-content-md-start">
-                            <a href="#" class="btn btn-primary btn-lg px-4 mdl-subscription-btn-primary">Assine agora</a>
+                            <a href="hml-assine" class="btn btn-primary btn-lg px-4 mdl-subscription-btn-primary">Assine agora</a>
             
-                            <div class="mdl-subscription--price">Assine por <b>R$ 39,90/mês no plano anual</b></div>
+                            <div class="mdl-subscription--price">Assine por <b>R$ 39,00/mês no plano anual</b></div>
                         </div>
         
                     </div>

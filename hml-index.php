@@ -53,14 +53,14 @@
 									print "
 
 									<div class='mdl-index-featured--news $active'>
-										<div class='mdl-index-featured--cat'>Destaque</div>
+										<div class='mdl-index-featured--cat'>Destaques</div>
 										<h1 class='mdl-index-featured--title'>
-											<a href='". $arrSlider[$i]["url_atual"] ."/". $arrSlider[$i]["url"] ."'>". $arrSlider[$i]["titulo"] ."</a>
+											<a href='". $arrSlider[$i]["url_atual"] ."/hml-noticias". $arrSlider[$i]["url"] ."'>". $arrSlider[$i]["titulo"] ."</a>
 										</h1>
 										<p class='mdl-index-featured--excerpt'>
 											$dia $mes, $ano
 											". $arrSlider[$i]["link_lp"] ."
-											Com o crescimento do e-commerce e as metas globais de sustentabilidade, o que sobra para a logística é o green last mile: a operação de última milha mais rentável e limpa possível
+											Com o crescimento do e-commerces e as metas globais de sustentabilidade, o que sobra para a logística é o green last mile: a operação de última milha mais rentável e limpa possível
 										</p>
 									</div>
 			
@@ -87,7 +87,7 @@
 									<div class='mdl-index-featured--news $active'>
 										<div class='mdl-index-featured--cat'>Destaque</div>
 										<h1 class='mdl-index-featured--title'>
-											<a href='". $arrSlider[$i]["url_atual"] ."/". $arrSlider[$i]["url"] ."'>". $arrSlider[$i]["titulo"] ."</a>
+											<a href='"."hml-noticias"."/". $arrSlider[$i]["url"] ."'>". $arrSlider[$i]["titulo"] ."</a>
                                           
 										</h1>
 										<p class='mdl-index-featured--excerpt'>
@@ -184,7 +184,7 @@
                                                         <div class="mdl-index-card-n--info">
                                                             <div class="mdl-index-card-n--label"><?=$arrSlider[$i]["categoria"]?> <span class="mdl-index-card-n--premium"></span></div>
                                                             <h3 class="mdl-index-card-n--title">
-                                                                <a href="artigo.html"><a href="<?= $arrSlider[$i]["url_atual"] ."/". $arrSlider[$i]["url"] ?>"><?=$arrSlider[$i]["titulo"]?></a></a>
+                                                                <a href="<?= "hml-noticias"."/". $arrSlider[$i]["url"] ?>"><?=$arrSlider[$i]["titulo"]?></a>
                                                             </h3>
                                                         </div>
                                                     </div>
@@ -214,7 +214,7 @@
         <!-- COLUNAS -->
         <div class="container">
             <div class="mdl-index-colunistas-w">
-                <h2 class="mdl-index-title-d">As últimas dos nossos colunistas</h2>
+                <h2 class="mdl-index-title-d">As últimas dos nossos patrocinadores</h2>
 
                 <div class="mdl-spacing"></div>
 
@@ -239,7 +239,7 @@
 
                                         <div class="col-9 col-md-9">
                                             <h4 class="mdl-index-colunistas-w--title">
-                                                <a href="<? print "blog/$d[usuario]/$d[url]"; ?>"><?=$d["titulo"]?></a>
+                                                <a href="<? print "hml-colunas/$d[usuario]/$d[url]"; ?>"><?=$d["titulo"]?></a>
                                             </h4>
                                             <div class="mdl-index-colunistas-w--author">
                                                 Por <span><?=$d["nome"]?></span>
@@ -266,7 +266,7 @@
         <div class="mdl-spacing"></div>
 
         <!-- Last podcasts -->
-        <div class="mdl-podcast-wrapper">
+        <div class="mdl-podcast-wrapper" style="display:none">
             <div class="container">
                 <div class="mdl-index-podcast-w">
 
@@ -408,12 +408,12 @@
                                                         <div class="mdl-index-card-i">
                                                             <div class="mdl-index-card-n--reading-time">5 min de leitura</div>
                                                             <h4 class="mdl-index-card-n--title">
-                                                                <a href="<?= $arrSlider[$i]["url_atual"] ."/". $arrSlider[$i]["url"] ?>"><?=$arrSlider[$i]["titulo"]?></a>
+                                                                <a href="<?= "hml-noticias" ."/". $arrSlider[$i]["url"] ?>"><?=$arrSlider[$i]["titulo"]?></a>
                                                             </h4>
                                                         </div>
 
                                                         <div class="mdl-index-card-n--actions">
-                                                            <a href="<?= $arrSlider[$i]["url_atual"] ."/". $arrSlider[$i]["url"] ?>" class="mdl-index-ard-n--link">Ler artigo completo</a>
+                                                            <a href="<?= "hml-noticias"."/". $arrSlider[$i]["url"] ?>" class="mdl-index-ard-n--link">Ler artigo completo</a>
                                                         </div>
                                                         
                                                         
@@ -563,7 +563,7 @@
     <div class="mdl-spacing"></div>
 
 
-<div class="mdl-publi-w">
+<div class="mdl-publi-w" style="display:none;">
     <div class="container">
         <div class="row">
                                     

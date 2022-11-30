@@ -1,5 +1,8 @@
 <?
+
 session_start();
+
+
 include("config.php");
 // CONTROLE 2.0
 // OTIMIZAÇÃO DE SITES AGÊNCIA MACAN
@@ -82,7 +85,6 @@ else {
 		"notificacao" => "notificacaoVindi.php",
 		"materiais-exclusivos" => "pg-materiais-exclusivos.php",
 		"revista-digital" => "pg-revista-digital.php",
-
 		"hml" => "hml-index.php",
 		"hml-podcast" => "hml-podcast.php",
 		"hml-entrevistas" => "hml-entrevista.php",
@@ -91,9 +93,11 @@ else {
 		"hml-colunas" => "hml-colunas.php",
 		"hml-podcast" => "hml-podcast.php",
 		"hml-noticias" => "hml-noticias.php",
-
+		"hml-revista" => "hml-revista.php",
 		"hml-assine" => "hml-manteratualizado.php",
 		"hml-checkout" => "hml-checkout.php",
+		"hml-compra" => "hml-revista-compraassinatura-vindi.php",
+		"hml-payment" => "hml-Assinatura-Vindi.jsp"
 	);
 	
 	
@@ -113,6 +117,5 @@ else {
 		}
 		include("index.php");
 	}
-	 
 }
 ?>

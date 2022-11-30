@@ -1,5 +1,4 @@
-﻿
-<?
+﻿<?
 $pg = "Assine Aqui!";
 if ($id2) {
 	
@@ -8,88 +7,175 @@ else {
 	$titulo = "$pg | $nmsite";
 	$bread = "<a href='".$url_total."' itemprop='url'><span>Home</span></a> ›|<span><strong>$pg</strong></span>";
 }
-include("_topo.php");
+
 ?>
-<div class="ne_recent_news_main_wrapper">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-				<div class="ne_recent_left_side_wrapper">
-					<div class="row">
-						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-							<div class="row">
-								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-									<div class="ne_busness_main_slider_wrapper ne_busness_main_slider_wrapper_lifestyle">
-										<div class="ne_recent_heading_main_wrapper">
-											<h1><?=$pg?></h1>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<p>&nbsp;</p>
-						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-							<div class="ne_sport_slider_wrapper ne_sport_slider_wrapper_single">
-								<div class="bkBranco">							
-								<div class="ne_map_content_wrapper ne_map_content_wrapper2 conteudoAssinatura">
-								
-								<h2><strong>Preencha os dados abaixo, faça sua assinatura e esteja sempre atualizado em logística!</strong></h2>
-								<p><strong>Valor da assinatura anual:</strong> R$468,00 a vista no boleto ou parcelado em até 12x de R$39,90 no cartão de crédito<BR>&nbsp;</p>
-								<p class='txtCenter h2rounded'><strong>APROVEITE O BENEFÍCIO:</strong><BR> Assinando agora, além da revista atual, GANHE 2 EDIÇÕES anteriores -<BR> "<a href="https://mundologistica.com.br/revista/edicoes-anteriores/tecnologia-e-transporte-inseparaveis" target="_blank">Tecnologia e transporte - inseparáveis</a>" e<BR> "<a href="https://mundologistica.com.br/revista/edicoes-anteriores/e-commerce-e-logistica-uma-relacao-elementar" target="_blank">Tudo sobre logística para e-commerce</a>"</p>
-								<p><BR><BR>*campos obrigatórios&nbsp;</p>
-								<form class="form-horizontal form2" onSubmit="return checa_formulario();" name="assinaturaMLOG" id="form" action="https://revistamundologistica.com.br/hml-Assinatura-Vindi.jsp" method="POST" accept-charset="ISO-8859-1">
-								<div class="row">
-									<div class="col-md-8">
-										<h2>Seus dados</h2>
-										
-										<div class="ne_map_form_input1 ne_map_form_input2">
-											<input type="text" name="nome" placeholder="Nome*" required />
-										</div>
-										<div class="ne_map_form_input1 ne_map_form_input2">
-											<input type="text" name="ac" placeholder="Aos cuidados" />
-										</div>
-										<div class="ne_map_form_input1 ne_map_form_input2">
-											<input type="text" name="email" placeholder="E-mail*" required />
-										</div>
-										<!-- <div class="ne_map_form_input1 ne_map_form_input2">
-											<div style="padding-top:15px">
-											<div class="row">
-												<div class="col-md-3"><strong>Sexo*:</strong></div>
-												<div class="col-md-4">
-													<input type="radio" name="sexo" id="M" value="M" class="inputRadio" checked required />
-													Masculino 
-												</div>
-												<div class="col-md-4">
-													<input type="radio" name="sexo" id="F" value="F" class="inputRadio" required />
-													Feminino
-												</div>
-											</div>
-											</div>
-										</div> -->
-										<div class="ne_map_form_input1 ne_map_form_input2">
-											<input type="text" name="telefoneRes" placeholder="Telefone/Celular*" required />
-										</div>
-										<div class="ne_map_form_input1 ne_map_form_input2">
-											<input type="text" name="telefoneCom" placeholder="Celular" />
-										</div>
-										<div class="ne_map_form_input1 ne_map_form_input2">
-											<input type="text" name="cep" id="cep" placeholder="CEP* (somente números)" maxlength="8" onblur="pesquisacep(this.value);" required />
-										</div>										
-										<div class="ne_map_form_input1 ne_map_form_input2">
-											<input type="text" id="endereco" name="endereco" placeholder="Endereço*" required />
-										</div>
-										<div class="ne_map_form_input1 ne_map_form_input2">
-											<input type="text" name="numero" placeholder="Numero*" required />
-										</div>
-										<div class="ne_map_form_input1 ne_map_form_input2">
-											<input type="text" name="complemento" placeholder="Complemento" required />
-										</div>
-										<div class="ne_map_form_input1 ne_map_form_input2">
-											<input type="text" id="cidade" name="cidade" placeholder="Cidade*" required />
-										</div>
-										<div class="ne_map_form_input1 ne_map_form_input2">
-											<select name="estado" id="estado" placeholder="" required> 
-											<option value="0">Estado*</option> 
+<!DOCTYPE html>
+<html lang="ot-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finalize a compra da sua assinatura - MundoLogística</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="assets/assinatura.css">
+    <link rel="stylesheet" href="assets/checkout.css">
+
+</head>
+<body class="mld-black-mode">
+    <div class="container">
+        <header class="mdl-header-clean mdl-header d-flex flex-wrap justify-content-center py-3 mb-4">
+            <div class="mdl-header-logo-responsive">MundoLogística</div>
+        </header>
+    </div>
+
+
+    <div class="container">
+        <div class="mdl-checkout-steps">
+           
+            <div class="row justify-content-center">
+
+                <div class="col-md-8 text-center">
+                    <div class="row">
+                        <div class="col">
+                            <div class="mdl-checkout-steps--item active">
+                                
+                                <div class="mdl-checkout-steps--title"><span class="mdl-checkout-steps--circle"></span> Identificação</div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="mdl-checkout-steps--item">
+                                
+                                <div class="mdl-checkout-steps--title"><span class="mdl-checkout-steps--circle"></span> Pagamento</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+           
+               
+
+            </div>
+            <div class="mdl-checkout-steps-line"></div>
+        </div>
+
+
+        <div class="mdl-spacing"></div>
+        <div class="mdl-spacing"></div>
+
+
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="row">
+                    <div class="col-md-6">
+                        
+                        <div class="mdl-checkout-box-carrinho">
+                            <div class="mdl-checkout-box-carrinho--title">
+                                Muito bem! Você está assinando por:
+                            </div>
+        
+                            <div class="mdl-checkout-box-carrinho--price">
+                                <small>12x de</small>
+                                R$ 39,00
+                            </div>
+        
+                            <div class="mdl-checkout-box-carrinho--perks">
+                                <ul class="list-unstyled mt-3 mb-4 mld-card-pricing-list">
+                                    <li>Acesso ilimitado as notícias</li>
+                                    <li>Receba a revista na sua casa</li>
+                                    <li>Cursos, Webinars, Ebooks, Descontos e tudo que tem direito</li>
+                                </ul>
+                            </div>
+
+                            <div class="row text-center">
+                                <div class="col">
+                                    <div class="mdl-checkout-box-carrinho--total">Valor total</div>
+                                </div>
+            
+                                <div class="col">
+                                    <div class="mdl-checkout-box-carrinho--number">R$ 468,00</div>
+                                </div>
+                            </div>
+
+                            <hr>
+
+                            <div id="payment-method" class="mdl-checkout-box-carrinho--total">Escolha a forma de pagamento</div> <Br>
+
+                            <div class="row" >
+                                <div class="col"> <input type="radio" value="B" checked name="formaPgto" id="Boleto" />  <label for="Boleto">Boleto</label> </div>
+                                <div class="col"><input type="radio" value="V" name="formaPgto" id="Visa" />  <label for="Visa">Visa</label></div>
+                                <div class="col"> <input type="radio" value="M" name="formaPgto" id="Mastercard" /> <label for="Mastercard">Mastercard</label></div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col"> <input type="radio" value="D" name="formaPgto" id="Dinner"/>  <label for="Dinner">Dinner</label></div>
+                                <div class="col"> <input type="radio" value="A" name="formaPgto" id="Amex" />  <label for="Amex">Amex</label></div>
+                                <div class="col"><input type="radio" value="E" name="formaPgto" id="Elo"/>  <label for="Elo">ELO</label></div>
+                                
+                            </div>
+
+                           <div class="row">
+                            <div class="col"><input type="radio" value="H" name="formaPgto" id="Hiper" /> <label for="Hiper">Hiper</label></div>
+                           </div>
+                        
+
+                        </div>
+        
+                       
+        
+                    </div>
+        
+                    <div class="col-md-6">
+                        <div class="mdl-checkout-box-carrinho--form">
+                            <h2 class="mdl-checkout-box-carrinho-form--title">Cadastro</h2>
+        
+                            <form onSubmit="return checa_formulario();" name="assinaturaMLOG" id="form" action="https://revistamundologistica.com.br/hml-Assinatura-Vindi.jsp" method="POST" accept-charset="ISO-8859-1" >
+                                <input type="hidden" value="" name="formaPgto" >
+                                <div class="mb-3">
+                                    <label for="nome" class="form-label mdl-checkout-label">Nome completo</label>
+                                    <input name="nome" type="text" class="form-control mdl-checkout-form-control" id="nome" aria-describedby="emailHelp" placeholder="Gustavo Soares" required>
+                                </div>
+        
+                                <div class="mb-3">
+                                    <label for="email" class="form-label mdl-checkout-label">E-mail</label>
+                                    <input name="email" type="email" class="form-control mdl-checkout-form-control" id="email" aria-describedby="emailHelp" placeholder="gustavo.soares@loglog.com.br" required>
+                                    <div id="emailHelp" class="form-text">Nunca compartilharemos seu e-mail com ninguém. E nem enviaremos SPAM. :)</div>
+                                </div>
+        
+                                <div class="mb-3">
+                                    <label for="telefone" class="form-label mdl-checkout-label">Telefone/Celular</label>
+                                    <input name="telefoneRes" type="number" class="form-control mdl-checkout-form-control" id="telefone" aria-describedby="emailHelp" placeholder="(11) 91234-5676">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="cep" class="form-label mdl-checkout-label">CEP</label>
+                                    <input name="cep" type="number" class="form-control mdl-checkout-form-control" id="cep" aria-describedby="emailHelp" placeholder="06753030" onblur="pesquisacep(this.value);" required >
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="endereco" class="form-label mdl-checkout-label">Endereço completo</label>
+                                    <input name="endereco" type="text" class="form-control mdl-checkout-form-control" id="endereco" aria-describedby="emailHelp" placeholder="Rua/Av/Logradouro">
+                                </div>
+                                
+                                 <div class="mb-3">
+                                    <label for="cidade" class="form-label mdl-checkout-label">Cidade</label>
+                                    <input name="cidade" type="text" class="form-control mdl-checkout-form-control" id="cidade" aria-describedby="emailHelp" >
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="numero" class="form-label mdl-checkout-label">Número</label>
+                                    <input name="numero" type="number" class="form-control mdl-checkout-form-control" id="numero" aria-describedby="emailHelp" >
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label for="complemento" class="form-label mdl-checkout-label">Complemento</label>
+                                    <input name="complemento" type="text" class="form-control mdl-checkout-form-control" id="complemento" aria-describedby="emailHelp" >
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="estado" class="form-label mdl-checkout-label">Estado</label>
+                                    <select  class="form-select form-control mdl-checkout-form-control" name="estado" id="estado" aria-label="Default select example">
+											<option value="0" selected>Estado*</option> 
 											<option value="AC">Acre</option> 
 											<option value="AL">Alagoas</option> 
 											<option value="AP">Amapá</option> 
@@ -117,119 +203,85 @@ include("_topo.php");
 											<option value="SP">São Paulo</option> 
 											<option value="SE">Sergipe</option> 
 											<option value="TO">Tocantins</option> 
-											</select>					
-										</div>
-										<div class="ne_map_form_input1 ne_map_form_input2">
-											<input type="text" name="cpf" placeholder="CPF/CNPJ* (somente números)" maxlength="14" onkeypress='return SomenteNumero(event)' required />
-										</div>
-										<div class="ne_map_form_input1 ne_map_form_input2">
-											<input type="text" name="empresa" placeholder="Empresa" />
-										</div>
-										<div class="ne_map_form_input1 ne_map_form_input2">
-											<select name="cargo" placeholder="" required>
-												<option selected value="">Cargo*</option>
-												<option value="Presidente">Presidente</option>
-												<option value="Diretor">Diretor</option>
-												<option value="Gerente">Gerente</option>
-												<option value="Supervisor">Supervisor</option>
-												<option value="Coordenador">Coordenador</option>
-												<option value="Analista">Analista</option>
-												<option value="Assistente">Assistente</option>
-												<option value="Comprador">Comprador</option>
-												<option value="Consultor">Consultor</option>
-												<option value="Professor/Instrutor">Professor/Instrutor</option>
-												<option value="Estudante">Estudante</option>
-												<option value="Outro">Outro</option>
-											  </select>       
-										</div>
-										<div class="ne_map_form_input1 ne_map_form_input2">
-											<select name="soube" placeholder="" required> 
-												<option selected value="">Soube da revista por*</option> 
-												<option value="Amigo">Amigo</option> 
-												<option value="Banca de Revistas">Banca de Revistas</option> 
-												<option value="Site">Site</option> 
-												<option value="Livraria">Livraria</option> 
-												<option value="Outro">Outro</option> 
-											</select>
-										</div>
-										<div class="ne_map_form_input1 ne_map_form_input2">
-											<input type="text" name="cupom" placeholder="Cupom de Desconto" />
-										</div>
-									</div>
-									<div class="col-md-4">
-										<div class="row">
-											<div class="col-md-1"><input type="radio" name="tipoAssinatura" value="PR" checked /></div>
-											<div class="col-md-11">
-											<p class="mini"><strong>ASSINATURA MUNDOLOGÍSTICA</strong> - 1 ano - R$468 - (em até 12x de R$39,00 no cartão ou a vista no boleto)</p>
-											<!-- <p class="mini" style="text-align:left!important"><strong>PREMIUM - Plataforma de conhecimento</strong><BR> - 1 ano - PROMOÇÃO - de R$468,00 por R$397,80 - parcele em até 12x de R$33,15 no cartão ou à vista no boleto</p> -->
-											<!-- parcele em até 12x de R$39,00 no cartão ou R$468,00 à vista no boleto)</p> -->
-											</div>
-										</div>
-									
-										<h2>Forma de pagamento</h2>
-										<div class="blockInput">
-											<input type="radio" value="B" checked name="formaPgto" /> <img src="/images/__boleton.jpg" alt="" /> Boleto
-										</div>
-										<div class="blockInput">
-											<input type="radio" value="V" name="formaPgto" /> <img src="/images/__visan.jpg" alt="" /> Visa
-										</div>
-										<div class="blockInput">
-											<input type="radio" value="M" name="formaPgto" /> <img src="/images/__mastern.jpg" alt="" /> Mastercard
-										</div>
-										<div class="blockInput">
-											<input type="radio" value="D" name="formaPgto" /> <img src="/images/__dinersn.jpg" alt="" /> Diners
-										</div>
-										<div class="blockInput">
-											<input type="radio" value="A" name="formaPgto" /> <img src="/images/_amexn.gif" alt="" /> Amex
-										</div>
-										<div class="blockInput">
-											<input type="radio" value="E" name="formaPgto" /> <img src="/images/__elo.jpg" alt="" /> ELO
-										</div>
-										<div class="blockInput">
-											<input type="radio" value="H" name="formaPgto" /> <img src="/images/__hipern.jpg">Hiper<BR>        
-										</div>
+															
+                                    </select>
+                                </div>
 
-										<p>&nbsp;</p>
-		<input type="hidden" name="sexo" value="M" />
-		<input type="hidden" name="fax" value="" />
-		<input type="hidden" name="dataNascimento" value="" />
-		<input type="hidden" name="edInicial" value="90" />
-										
-									</div>
-								</div>
-								
-								<div class="row">
-									<div class="col-md-12">
-										<div class="text-center" style="margin:20px 0">
+                                <div class="mb-3">
+                                    <label for="cpf" class="form-label mdl-checkout-label">CPF/CNPJ*</label>
+                                    <input name="cpf" type="number" class="form-control mdl-checkout-form-control" id="cpf" placeholder="000 000 000 00" maxlength="14" onkeypress='return SomenteNumero(event)' required>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="empresa" class="form-label mdl-checkout-label">Empresa*</label>
+                                    <input  class="form-control mdl-checkout-form-control" id="empresa" aria-describedby="emailHelp" placeholder="Nome da empresa">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="cargo" class="form-label mdl-checkout-label">Cargo*</label>
+                                    <select class="form-select form-control mdl-checkout-form-control" name="cargo" id="cargo" aria-label="Default select example" reqqiured>
+                                        <option selected value="">Cargo*</option>
+                                        <option value="Presidente">Presidente</option>
+                                        <option value="Diretor">Diretor</option>
+                                        <option value="Gerente">Gerente</option>
+                                        <option value="Supervisor">Supervisor</option>
+                                        <option value="Coordenador">Coordenador</option>
+                                        <option value="Analista">Analista</option>
+                                        <option value="Assistente">Assistente</option>
+                                        <option value="Comprador">Comprador</option>
+                                        <option value="Consultor">Consultor</option>
+                                        <option value="Professor/Instrutor">Professor/Instrutor</option>
+                                        <option value="Estudante">Estudante</option>
+                                        <option value="Outro">Outro</option>
+                                                        
+                                </select>
+                                </div>
+
+                                <input type="hidden" name="sexo" value="M" />
+                                <input type="hidden" name="fax" value="" />
+                                <input type="hidden" name="dataNascimento" value="" />
+                                <input type="hidden" name="edInicial" value="91" />
+
+                                <div class="mb-3">
+                                    <label for="cupom" class="form-label mdl-checkout-label">Cupom de desconto</label>
+                                    <input type="text" class="form-control mdl-checkout-form-control" id="cupom" aria-describedby="emailHelp" placeholder="Insira seu cupom (opcional)">
+                                </div>
+
+                                <div class="mb-3 form-check">
+                                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                    <label class="form-check-label" for="exampleCheck1">Aceito os <a href="#" style="color:#fff">termos e condições</a></label>
+                                </div>
+
+                                <div class="text-center" style="margin:20px 0">
 										<div class="g-recaptcha" data-sitekey="6LfF5iMTAAAAAPnSc_a_vqY8CFJL8lcunazg64HS" style="display:inline-block"></div>
 										</div>
-										<div class="text-center"><button id="submit" class="button">Comprar</button></div>
-									</div>
-								</div>
-								
-								</form>
-								<div class="clearfix"></div>
+        
+                                <button type="submit" class="btn btn-primary mdl-btn-primary-checkout">Concluir cadastro e próximo</button>
+                                
+                                <div class="mdl-spacing"></div>
+                                <p>
+                                    Em caso de problemas, entre em contato com o suporte através do e-mail suporte@mundologistica.com
+                                </p>
+        
+                                <p>
+                                    Ao clicar no botão Concluir cadastro, você aceita nossos termos de uso e política de privacidade
+                                </p>
+                                
 
-								<!-- <p><img src='/images/camiseta-tabela.jpg' /></p> -->
-<BR><BR>							
-								
-								<p>• O pagamento pode ser feito por boleto bancário ou cartão de crédito. O boleto é gerado automaticamente após o preenchimento do formulário acima e poderá ser pago em qualquer agência bancária ou via Internet Banking. O pagamento por cartão de crédito é feito de forma online.</p>
-								<p>• Após o pagamento, em até 1 dia útil você receberá um e-mail de confirmação da assinatura e seu código de assinante para acesso a área de assinantes. Você receberá seu primeiro exemplar impresso dentro de 5 a 10 dias úteis.</p>
-								<p>• Dúvidas podem ser enviadas para <a href="mailto:assinaturas@mundologistica.com.br">assinaturas@mundologistica.com.br</a></p>
-								<p>&nbsp;</p>
-								
-								
-								</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-
+                                <div class="mdl-spacing"></div>
+                            </form>
+                        </div>
+                        
+                    </div>
+        
+        
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</body>
+</html>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script type="text/javascript" src="https://d335luupugsy2.cloudfront.net/js/integration/stable/rd-js-integration.min.js"></script>  
@@ -237,7 +289,9 @@ include("_topo.php");
 
     <!-- Adicionando Javascript -->
     <script>
-    
+    document.querySelector('#cep').onBlur = () => {
+        pesquisacep()
+    }
     function limpa_formulário_cep() {
             //Limpa valores do formulário de cep.
             document.getElementById('endereco').value=("");
@@ -248,6 +302,7 @@ include("_topo.php");
     function meu_callback(conteudo) {
         if (!("erro" in conteudo)) {
             //Atualiza os campos com os valores.
+      
             document.getElementById('endereco').value=(conteudo.logradouro);
             document.getElementById('cidade').value=(conteudo.localidade);
             document.getElementById('estado').value=(conteudo.uf);
@@ -304,7 +359,6 @@ include("_topo.php");
 
 <script language="javascript"> 
 
-
 	function SomenteNumero(e){
 		var tecla=(window.event)?event.keyCode:e.which;   
 		if((tecla>47 && tecla<58)) return true;
@@ -315,7 +369,10 @@ include("_topo.php");
 	}
 	
 	function checa_formulario(){
+        $('#form').find('input[name="formaPgto"]').val($('input[name="formaPgto"]:checked').val())
 		
+
+
 		//validar nome
 		if (document.assinaturaMLOG.nome.value == ""){
 			alert("O campo nome deve ser preenchido!");
@@ -403,8 +460,8 @@ var inputTelefoneRes = form.find('input[name="telefoneRes"]');
 var inputTelefoneCom = form.find('input[name="telefoneCom"]');
 var inputCidade = form.find('input[name="cidade"]');
 var inputEstado = form.find('select[name="estado"]');
-var inputFormaPgto = form.find('input[name="formaPgto"]:checked');
-var inputTipoAssinatura = form.find('input[name="tipoAssinatura"]:checked');
+var inputFormaPgto = payment_method.querySelector('input[name="formaPgto"]:checked');
+var inputTipoAssinatura = form.find('select[name="tipoAssinatura"]:checked');
 var inputCargo = form.find('select[name="cargo"]');
 
   var data_array = [
@@ -421,17 +478,19 @@ var inputCargo = form.find('select[name="cargo"]');
     { name: 'token_rdstation', value: TOKEN }
   ];
 
-        RdIntegration.post(data_array);
+
+
+    //    RdIntegration.post(data_array);
 		
 		return document.assinaturaMLOG.submit();
 }
-	
+    
 
 	
 	</script>
 
-<script type='text/javascript' data-cfasync='false'>window.purechatApi = { l: [], t: [], on: function () { this.l.push(arguments); } }; (function () { var done = false; var script = document.createElement('script'); script.async = true; script.type = 'text/javascript'; script.src = 'https://app.purechat.com/VisitorWidget/WidgetScript'; document.getElementsByTagName('HEAD').item(0).appendChild(script); script.onreadystatechange = script.onload = function (e) { if (!done && (!this.readyState || this.readyState == 'loaded' || this.readyState == 'complete')) { var w = new PCWidget({c: '3c23fb9f-5837-463b-9b7c-03c5ca2286ab', f: true }); done = true; } }; })();</script>
-
+<!--<script type='text/javascript' data-cfasync='false'>window.purechatApi = { l: [], t: [], on: function () { this.l.push(arguments); } }; (function () { var done = false; var script = document.createElement('script'); script.async = true; script.type = 'text/javascript'; script.src = 'https://app.purechat.com/VisitorWidget/WidgetScript'; document.getElementsByTagName('HEAD').item(0).appendChild(script); script.onreadystatechange = script.onload = function (e) { if (!done && (!this.readyState || this.readyState == 'loaded' || this.readyState == 'complete')) { var w = new PCWidget({c: '3c23fb9f-5837-463b-9b7c-03c5ca2286ab', f: true }); done = true; } }; })();</script>
+-->
 <?
-include("_rodape.php");
+include("_hml-rodape.php");
 ?>

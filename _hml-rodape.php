@@ -261,8 +261,15 @@
 
 
 <!-- BANNER NO FORMATO 728X90 DESKTOP -->
-<div class="container">
-    <div class="row text-center">
+
+
+<!-- BANNER NO FORMATO 728X90 DESKTOP -->
+
+<div class="popup-modal">
+  <div class="popup-modal-close"></div>
+
+  <div class="popup-modal-content">
+  <div class="row text-center">
         <div class="ne_logo_banner_inner_wrapper col-md-12">
                         <?
                         $dataHoje = date("Y-m-d");
@@ -287,14 +294,20 @@
         </div>
 
     </div>
+  </div>
 </div>
-
-<!-- BANNER NO FORMATO 728X90 DESKTOP -->
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
     crossorigin="anonymous"></script>
+
+    <script>
+      $(".popup-modal-close").click(function(){
+        $(".popup-modal").hide();
+    })
+    </script>
 </body>
+
 
 
 
