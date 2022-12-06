@@ -163,7 +163,7 @@ include("_hml-topo.php");
 		
 		/* nova rotina */
 		$parametro_noticia=$url_total.$atual."/$d[url]";
-		include("aux_conteudo_para_assinantes.php");
+		include("hml_aux_conteudo_para_assinantes.php");
 		
 		$sql_assinante=mysqli_query($con,"SELECT id FROM fk_para_assinantes WHERE id_pai = '$d[id]' AND tabela = 'artigo'");
 		if (mysqli_num_rows($sql_assinante)){
